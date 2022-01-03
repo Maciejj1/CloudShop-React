@@ -1,25 +1,34 @@
 import React from 'react'
 import { ShoppingCart , Home ,} from '@material-ui/icons';
-import { IconButton, Badge } from '@material-ui/core'
+import { IconButton, Badge } from '@material-ui/core';
 import LoginIcon from '@mui/icons-material/Login';
+import {Link , useLocation} from 'react-router-dom'
 const Navigation = () => {
+    const location = useLocation();
+
+    if(location.pathname === '/')
+
     return (
         <div>
             <div className="buttton">
-                         <button className="IconButton" aria-label='Show cart items' >
+                         <button component={Link} to="/Cart"className="IconButton" aria-label='Show cart items' >
                              <Badge className='Badge' badgeContent={2} color='secondary' >
                                  <ShoppingCart  />
                              </Badge>
 
                          </button>
-                         <button className='HomeButton' aria-label='Home page'>
+                         {location.pathname === '/' && (
+                         <button component={Link} to="/" className='HomeButton' aria-label='Home page'>
                              <div className='Home'>
                                  <Home />
                              </div>
-                         </button>
-                        <button className='LoginButton'>
+                         </button>)}
+                        <button component={Link} to="/Login" type="button" className='LoginButton'  >
                             <div className='Login'>
-                               <LoginIcon />
+
+                               <LoginIcon >
+                                   </LoginIcon>
+
                             </div>
                         </button>
                     </div>
