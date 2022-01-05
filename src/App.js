@@ -1,22 +1,23 @@
 import React , {Component}from 'react'
-import {Navbar, Products } from './components';
+import {Navbar, Products , Home , AddProducts} from './components';
+import ReactDOM from 'react-dom';
 import { BrowserRouter as Router , Routes , Route } from 'react-router-dom';
+
 import './App.scss'
-const App = () => {
-    debugger
+
+class App extends Component {
+render() {
     return (
-        <Router>
-        <div className='App'>  
-        <Navbar />
-           <Routes>
-               <Route exact path="/cart">
-
-               </Route>
-
-                </Routes>
-           <Products />
+        <div className='App'>
+            <Router>
+            <Routes>
+                <Route path="/" element={<Home />} />
+            </Routes>
+            </Router>
         </div>
-        </Router>
-    )
+            
+    );
 }
+}
+
 export default App;
