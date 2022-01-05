@@ -12,6 +12,9 @@ render() {
             <Router>
             <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/addproducts" element={<AddProducts/>} />
+ 
+
             </Routes>
             </Router>
         </div>

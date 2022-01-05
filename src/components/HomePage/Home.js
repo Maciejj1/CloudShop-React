@@ -8,8 +8,6 @@ const Home = () => {
         <div>
             <Navbar />
             <Products />
-            <AddProducts />
-            <Link to="Products">Click me </Link>
         </div>
     )
 }
