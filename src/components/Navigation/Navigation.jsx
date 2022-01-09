@@ -3,6 +3,7 @@ import { ShoppingCart , Home ,} from '@material-ui/icons';
 import { IconButton, Badge } from '@material-ui/core';
 import LoginIcon from '@mui/icons-material/Login';
 import {Link , useLocation} from 'react-router-dom'
+import './Navigation.scss'
 const Navigation = () => {
     const location = useLocation();
 
@@ -11,14 +12,14 @@ const Navigation = () => {
     return (
         <div>
             <div className="buttton">
-                         <button component={Link} to="/Cart"className="IconButton" aria-label='Show cart items' >
+                         <button component={Link} to="/Cart"className="IconButton" aria-label='Show-cart-items' >
                              <Badge className='Badge' badgeContent={2} color='secondary' >
                                  <ShoppingCart  />
                              </Badge>
 
                          </button>
                          {location.pathname === '/' && (
-                         <button component={Link} to="/" className='HomeButton' aria-label='Home page'>
+                         <button component={Link}  to="/" className='HomeButton' aria-label='Home-page'>
                              <div className='Home'>
                                  <Home />
                              </div>

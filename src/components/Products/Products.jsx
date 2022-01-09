@@ -38,6 +38,8 @@ const Products = () => {
                     </div>
 
                    <Link to='' className='buy'>KUP TERAZ</Link>
+
+                   <Link to='' className='cart'>Dodaj do Koszyka</Link>
                 </div>
 
             ))}
