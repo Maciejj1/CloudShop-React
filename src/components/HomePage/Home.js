@@ -1,7 +1,7 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 import  Navbar  from '../NavBar/Navbar'
-import  Products  from '../Products/Products'
+import Products from '../Products/Products'
 import  AddProducts  from '../AddProducts/AddProducts'
 const Home = () => {
     return (
@@ -12,4 +12,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Home;

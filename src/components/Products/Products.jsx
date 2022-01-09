@@ -1,30 +1,50 @@
-import React from 'react';
+import React,{useContext} from 'react';
 import { Grid } from '@material-ui/core';
+import { ProductsContext } from '../ProductsContext/ProductsContext';
+import './Products.scss'
+import { IconButton } from '@material-ui/core';
+import {AddShoppingCart} from '@material-ui/icons'
+import {Link} from 'react-router-dom'
+import {Card , CardContent } from '@material-ui/core'
 
-
-import Product from './Product/Product';
-
-const products = [
-    {id: 1, name: 'Geekvape Aegis Boost', description: 'Better for a cloud', price: '$20' , image:'https://e-liq.pl/5334-large_default/geekvape-aegis-pod-b100-21700-devil-red.jpg' },
-    {id: 2, name: 'Voopoo Argus', description: 'Better for a cloud and juicy', price: '$25', image: 'https://e-liq.pl/5100-large_default/voopoo-pod-argus-pro-80w-3000-mah-litchi-leather-blue.jpg'},
-    {id: 3, name: 'Smok G-Priv', description: 'For Men ', price: '$35' , image: 'https://e-liq.pl/1666-thickbox_default/smok-g-priv-230w-box-mod-silver.jpg'},
-    {id: 4, name: 'Eleaf I-just 3', description: 'For kids ', price: '$15' , image: 'https://e-golon.nazwa.pl/presta/4335-large_default/eleaf-ijust-3-starter-kit-gtl-pod-tank-3000mah-45ml.jpg'}
-    
-];
 
 
 const Products = () => {
+    const { products } = useContext(ProductsContext);
     return ( 
-    <main>
-      <Grid container justify="center" spacing={4}>
-        {products.map((product) =>(
-            <Grid item key={product.id} xs={12} sm={6} md={4} lg={3}>
-                <Product product={product} />
-                </Grid>
-        ))}
-      </Grid>
+        <>
+        
+        {products.length !== 0 && <h2>Wybrane dla ciebie</h2>}
 
-    </main>
+        <div className='products-container'>
+            {products.length === 0 && <div>slow internet...no products to display</div>}
+            {products.map(product => (
+               
+                <div className='product-card' key={product.ProductID}> 
+
+                <div className='product-name'>
+                        {product.ProductName}
+                    </div>
+                    
+                    <div className='product-img'>
+                        <img src={product.ProductImg} alt="not found" />
+                    </div>
+
+                    <div className='product-price'>
+                         {product.ProductPrice}$
+                </div>
+                <div className='product-description'>
+                    {product.ProductDescription}
+                    </div>
+
+                   <Link to='' className='buy'>KUP TERAZ</Link>
+                </div>
+
+            ))}
+
+        </div>
+
+    </>
     )
 }
 export default Products;
