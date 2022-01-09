@@ -4,11 +4,17 @@ import ReactDOM from 'react-dom';
 import { BrowserRouter as Router , Routes , Route } from 'react-router-dom';
 import { ProductsContextProvider } from './components/ProductsContext/ProductsContext';
 import './App.scss'
-
+import Particles from 'react-tsparticles';
 class App extends Component {
+
+
+
+
+
 render() {
     return (
         <div className='App'>
+         
             <ProductsContextProvider>
             <Router>
             <Routes>
@@ -19,6 +25,7 @@ render() {
             </Routes>
             </Router>
             </ProductsContextProvider>
+
         </div>
             
     );
