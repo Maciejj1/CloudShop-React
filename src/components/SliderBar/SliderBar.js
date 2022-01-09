@@ -1,5 +1,5 @@
 import React from 'react'
-
+import './SliderBar.scss'
 const SliderBar = () => {
     return (
         <div className='slider-bar'>

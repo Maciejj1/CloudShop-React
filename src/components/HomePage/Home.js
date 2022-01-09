@@ -17,7 +17,7 @@ const Home = () => {
         console.log(container);
       };
     return (
-        <div>
+        <div className='home'>
             <Navbar />
             <div className='particle'>
             <Particles

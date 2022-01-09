@@ -3,16 +3,16 @@ body {
   width: 100%;
   display: inline;
   padding: 0;
-  background: rgb(63, 94, 251);
-  background: linear-gradient(
-    90deg,
-    rgba(63, 94, 251, 1) 10%,
-    rgba(252, 70, 107, 1) 100%
-  );
 }
 h5 {
   color: rgb(29, 29, 29);
 }
 .App {
   padding-left: 20px;
+  background: rgb(63, 94, 251);
+  background: linear-gradient(
+    90deg,
+    rgba(63, 94, 251, 1) 10%,
+    rgba(252, 70, 107, 1) 100%
+  );
 }

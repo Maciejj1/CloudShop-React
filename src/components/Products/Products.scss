@@ -71,9 +71,14 @@ h2 {
   position: relative;
   padding: 5px 15px;
   margin: 2px;
-  color: #000000;
+  color: #ffffff;
   text-decoration: none;
-  background: #3f79ff;
+  background: rgb(63, 94, 251);
+  background: linear-gradient(
+    90deg,
+    rgba(63, 94, 251, 1) 10%,
+    rgba(252, 70, 107, 1) 100%
+  );
   border-radius: 30px;
   letter-spacing: 1px;
 }
@@ -81,11 +86,22 @@ h2 {
   position: relative;
   padding: 5px 15px;
   margin: 2px;
-  color: #000000;
+  color: #ffffff;
   text-decoration: none;
-  background: #3f79ff;
+  background: rgb(63, 94, 251);
+  background: linear-gradient(
+    90deg,
+    rgba(63, 94, 251, 1) 10%,
+    rgba(252, 70, 107, 1) 100%
+  );
   border-radius: 30px;
   letter-spacing: 1px;
   margin-left: 150px;
   margin-top: -30px;
+}
+.buy:hover {
+  color: aqua;
+}
+.cart:hover {
+  color: aqua;
 }
