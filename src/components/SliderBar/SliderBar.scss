@@ -5,22 +5,34 @@
   padding: 20px;
   padding-right: 20px;
   display: flex;
-  background-color: azure;
+  margin-top: -15px;
+  background-color: #dfdfdf;
 }
-.search {
+.searchh {
   float: left;
-  height: 50px;
+  height: 30px;
+  margin-left: 10px;
 }
-.promotions {
+.Promotions {
   float: left;
+  margin-left: 20px;
+  background: rgb(63, 94, 251);
 }
 .sliderbar-buttons {
-  background: rgb(63, 94, 251);
-  background: linear-gradient(
-    90deg,
-    rgba(63, 94, 251, 1) 10%,
-    rgba(252, 70, 107, 1) 100%
-  );
+  background-color: #dfdfdf;
 }
-.button {
+.Boxs {
+  margin-left: 20px;
+  background: rgb(63, 94, 251);
+  background: linear-gradient(90deg, rgba(63, 94, 251, 1) 80%, #7857d0 100%);
+}
+.Premix {
+  margin-left: 20px;
+  background: rgb(63, 94, 251);
+  background: linear-gradient(90deg, rgba(63, 94, 251, 1) 50%, #7857d0 100%);
+}
+.Kity {
+  margin-left: 20px;
+  background: rgb(63, 94, 251);
+  background: linear-gradient(90deg, rgba(63, 94, 251, 1) 60%, #8256c8 100%);
 }

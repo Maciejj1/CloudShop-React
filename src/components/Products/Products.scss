@@ -1,6 +1,8 @@
 h2 {
   padding: 30px;
   border-bottom: 2px solid #ffffff;
+  margin-left: -21px;
+  color: #ffff;
 }
 
 @media (max-width: 768px) {
@@ -13,7 +15,7 @@ h2 {
 .products-container {
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
   padding: 30px;
   flex-wrap: wrap;
 }
@@ -28,7 +30,6 @@ h2 {
   font-size: 12px;
   font-weight: 600;
   text-align: center;
-  box-shadow: 2px 2px 4px #000000;
   position: relative;
   background-color: rgb(255, 255, 255);
 }
@@ -75,7 +76,7 @@ h2 {
   text-decoration: none;
   background: rgb(63, 94, 251);
   background: linear-gradient(
-    90deg,
+    120deg,
     rgba(63, 94, 251, 1) 10%,
     rgba(252, 70, 107, 1) 100%
   );
@@ -90,7 +91,7 @@ h2 {
   text-decoration: none;
   background: rgb(63, 94, 251);
   background: linear-gradient(
-    90deg,
+    120deg,
     rgba(63, 94, 251, 1) 10%,
     rgba(252, 70, 107, 1) 100%
   );

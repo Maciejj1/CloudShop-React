@@ -3,8 +3,8 @@ import './SliderBar.scss'
 const SliderBar = () => {
     return (
         <div className='slider-bar'>
-           <label for="search">Szukaj</label>
-           <input type="text" id="search" name="search" />
+           <label htmlFor="search">Szukaj</label>
+           <input type="text" id="search" name="search" className='searchh' />
            <div className='sliderbar-buttons'>
                <button className='Promotions'>Promocje</button>
                <button className="Boxs">Boxy</button>

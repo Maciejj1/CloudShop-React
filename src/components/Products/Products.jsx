@@ -6,18 +6,19 @@ import { IconButton } from '@material-ui/core';
 import {AddShoppingCart} from '@material-ui/icons'
 import {Link} from 'react-router-dom'
 import {Card , CardContent } from '@material-ui/core'
-
+import Particles from 'react-tsparticles'
 
 
 const Products = () => {
+
     const { products } = useContext(ProductsContext);
     return ( 
         <>
-        
+         
         {products.length !== 0 && <h2>Wybrane dla ciebie</h2>}
 
         <div className='products-container'>
-            {products.length === 0 && <div>slow internet...no products to display</div>}
+            {products.length === 0 && <div>Wolny net lub nie ma produktów</div>}
             {products.map(product => (
                
                 <div className='product-card' key={product.ProductID}> 
@@ -43,6 +44,7 @@ const Products = () => {
                 </div>
 
             ))}
+            
 
         </div>
 

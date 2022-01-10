@@ -48,6 +48,21 @@
 .buttton {
   width: 100%;
   align-items: right;
-
   margin-left: 450px;
+}
+.Add {
+  float: right;
+  align-items: center;
+  margin-top: 66px;
+  padding-top: -1px;
+  margin-right: 1px;
+  background-color: #f14874;
+  border-color: #5d5ae4;
+  color: rgb(129, 129, 129);
+  padding: 5px;
+}
+.Add:hover {
+  background-color: #72ff3b;
+  color: rgb(129, 129, 129);
+  cursor: pointer;
 }

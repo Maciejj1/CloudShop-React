@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import './AddProducts.scss'
 import {storage , db} from '../../config/Config'
+import { Link } from 'react-router-dom'
 const AddProducts = () => {
 
         const [productName, setProductName] = useState('');
@@ -81,7 +82,7 @@ const AddProducts = () => {
           <br />
           <input type="file" className='form-control' onChange={productImgHandler} id="file"/>
           <br/>
-          <button className='btn btn-success btn-md mybtn'>Dodaj</button>
+          <button className='AddButtonProduct'>Dodaj</button>
           
 
 
@@ -89,8 +90,14 @@ const AddProducts = () => {
 
          </form>
          {error&&<span>{error}</span>}
+         <div className='homecoming'>
+         <Link to='/'>Powrót</Link>
         </div>
+        </div>
+        
+       
     )
+   
 }
-
+ 
 export default AddProducts

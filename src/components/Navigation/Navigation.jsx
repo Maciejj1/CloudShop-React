@@ -4,6 +4,7 @@ import { IconButton, Badge } from '@material-ui/core';
 import LoginIcon from '@mui/icons-material/Login';
 import {Link , useLocation} from 'react-router-dom'
 import './Navigation.scss'
+import AddIcon from '@mui/icons-material/Add';
 const Navigation = () => {
     const location = useLocation();
 
@@ -29,9 +30,16 @@ const Navigation = () => {
 
                                <LoginIcon >
                                    </LoginIcon>
+                                  
 
                             </div>
+                            
                         </button>
+                        <div className='Add'>
+                                
+                                    <Link to='/addproducts'><AddIcon /></Link>
+
+                            </div>
                     </div>
         </div>
     )
