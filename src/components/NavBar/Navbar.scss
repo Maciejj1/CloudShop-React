@@ -1,0 +1,85 @@
+.navbarr {
+  width: auto;
+  height: 100px;
+  padding-right: 46px;
+  margin-left: -20px;
+  background-color: #4dbbee;
+
+  display: flex;
+  justify-content: center;
+  margin-bottom: 15px;
+  margin-top: 0px;
+}
+
+.Badge {
+  float: right;
+  color: rgb(255, 255, 255);
+}
+.HomeButton {
+  float: right;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  margin-top: 67px;
+  background-color: #52bad4;
+  border: none;
+  z-index: 9999;
+}
+.image {
+  width: 200px;
+  align-items: left;
+}
+
+.IconButton {
+  padding-top: 3px;
+  margin-top: 67px;
+  background-color: #52bad4;
+  border: none;
+  margin-left: 1px;
+  float: right;
+}
+.LoginButton {
+  float: right;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  padding-top: -1px;
+  margin-top: 67px;
+  margin-right: 1px;
+  background-color: #52bad4;
+  border: none;
+}
+.buttton {
+  width: 100%;
+  align-items: right;
+  margin-left: 450px;
+}
+.Add {
+  float: right;
+  align-items: center;
+  margin-top: 64px;
+  margin-right: 1px;
+  color: rgb(255, 255, 255);
+  padding: 3px;
+}
+.ADDBUTTON {
+  background-color: #52bad4;
+  border: none;
+  color: rgb(255, 255, 255);
+
+  margin-right: -3px;
+}
+.navlinks {
+  float: right;
+  margin-left: 5px;
+  background-color: white;
+  text-decoration: none;
+
+  padding: 3px;
+}
+.navlinkss {
+  float: right;
+  margin-left: 5px;
+  background-color: white;
+  text-decoration: none;
+  display: flex-end;
+  padding: 3px;
+}
