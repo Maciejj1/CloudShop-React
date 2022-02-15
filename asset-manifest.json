@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/CloudShop/static/css/main.eb15960b.css",
+    "main.js": "/CloudShop/static/js/main.b037d418.js",
+    "static/media/logo.png": "/CloudShop/static/media/logo.7bb959d5840c37fb5206.png",
+    "index.html": "/CloudShop/index.html",
+    "main.eb15960b.css.map": "/CloudShop/static/css/main.eb15960b.css.map",
+    "main.b037d418.js.map": "/CloudShop/static/js/main.b037d418.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.eb15960b.css",
+    "static/js/main.b037d418.js"
+  ]
+}
