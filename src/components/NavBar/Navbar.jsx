@@ -1,36 +1,41 @@
 import React from 'react'
-import { ShoppingCart , Home ,} from '@material-ui/icons';
-import { IconButton, Badge } from '@material-ui/core'
-import LoginIcon from '@mui/icons-material/Login';
 import logo from '../../photos/logo.png'
 import  './Navbar.scss'
 import Navigation  from '../Navigation/Navigation';
-import Particles from 'react-tsparticles';
+import {Link} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
+import { auth } from '../../config/Config';
 
-const Navbar = () => {
-    const particlesInit = (main) => {
-        console.log(main);
-    
-        // you can initialize the tsParticles instance (main) here, adding custom shapes or presets
-      };
-    
-      const particlesLoaded = (container) => {
-        console.log(container);
-      };
+const Navbar = ({user}) => {
+    const history = useNavigate();
+
+    const handleLogout= () =>{
+        auth.signOut().then(()=>{
+            history('/login')
+        })
+    }
+
     return (
-        
-        <div className="navbarr">
 
+        <div className="navbarr">
             <div  className="appBar"  >
-                <Navigation />
+
                 <div className="Toolbar">
                     <span  className="title" >
                         <img src={logo} alt="XD" className="image" />
                     </span>
                     <div className="grow" />
-                    
                 </div>
-
+            </div>
+            <div className='login-register-bar'>
+            {!user && <div className='appBar'>
+                <Link to='login/register' className='navlinkss'>Zarejestruj się</Link>
+                <Link to='login' className='navlinks'>Zaloguj się</Link>
+            </div>}
+            {user && <div className='appBar'>
+                <span><Navigation /></span>
+                <span><button className='logout-btn' onClick={handleLogout}>Wyloguj</button></span>
+            </div>}
             </div>
         </div>
     )

@@ -1,12 +1,13 @@
 .slider-bar {
-  width: 101%;
+  width: auto;
   height: auto;
   margin-left: -20px;
   padding: 20px;
   padding-right: 20px;
   display: flex;
   margin-top: -15px;
-  background-color: #dfdfdf;
+  color: #000000;
+  background-color: #048ece;
 }
 .searchh {
   float: left;
@@ -16,23 +17,39 @@
 .Promotions {
   float: left;
   margin-left: 20px;
-  background: rgb(63, 94, 251);
+  background: #52bad4;
+  color: white;
+  border: none;
+  padding: 3px;
 }
 .sliderbar-buttons {
-  background-color: #dfdfdf;
+  background-color: #048ece;
 }
 .Boxs {
   margin-left: 20px;
-  background: rgb(63, 94, 251);
-  background: linear-gradient(90deg, rgba(63, 94, 251, 1) 80%, #7857d0 100%);
+  background: #52bad4;
+  border: none;
+  color: white;
+  padding: 3px;
 }
 .Premix {
   margin-left: 20px;
-  background: rgb(63, 94, 251);
-  background: linear-gradient(90deg, rgba(63, 94, 251, 1) 50%, #7857d0 100%);
+  background: #52bad4;
+  border: none;
+  color: white;
+  padding: 3px;
 }
 .Kity {
   margin-left: 20px;
-  background: rgb(63, 94, 251);
-  background: linear-gradient(90deg, rgba(63, 94, 251, 1) 60%, #8256c8 100%);
+  background: #52bad4;
+  border: none;
+  color: white;
+  padding: 3px;
+}
+.Searching-button {
+  background: #52bad4;
+  float: left;
+  border: none;
+  color: white;
+  padding: 3px;
 }
