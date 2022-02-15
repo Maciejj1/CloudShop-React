@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/CloudShop/static/css/main.36f0a9a3.css",
-    "main.js": "/CloudShop/static/js/main.07eab56c.js",
+    "main.js": "/CloudShop/static/js/main.e0a398fa.js",
     "static/media/logo.png": "/CloudShop/static/media/logo.7bb959d5840c37fb5206.png",
     "index.html": "/CloudShop/index.html",
     "main.36f0a9a3.css.map": "/CloudShop/static/css/main.36f0a9a3.css.map",
-    "main.07eab56c.js.map": "/CloudShop/static/js/main.07eab56c.js.map"
+    "main.e0a398fa.js.map": "/CloudShop/static/js/main.e0a398fa.js.map"
   },
   "entrypoints": [
     "static/css/main.36f0a9a3.css",
-    "static/js/main.07eab56c.js"
+    "static/js/main.e0a398fa.js"
   ]
 }
