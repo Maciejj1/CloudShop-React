@@ -38,7 +38,7 @@ class App extends Component {
                 <ProductsContextProvider>
                     <Router>
                         <Routes>
-                            <Route path="/" element={<Home user={this.state.user} />} />
+                            <Route path="/CloudShop" element={<Home user={this.state.user} />} />
                             <Route path="/addproducts" element={<AddProducts/>} />
                             <Route path="/login/Register" element={<Register />} />
                             <Route path="/Login" element={<Login />} />
