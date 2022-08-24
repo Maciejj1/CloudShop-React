@@ -1,4 +1,5 @@
-.Navigation {
+.navigation {
   display: flex;
-  float: right;
+  flex-direction: column;
+  justify-content: center;
 }

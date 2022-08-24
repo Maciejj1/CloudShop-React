@@ -1,0 +1,240 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200&family=Roboto:wght@100&display=swap");
+
+.burger {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: fixed;
+  transition: 0.5s;
+  background: linear-gradient(93.47deg, #00d1ff -10.14%, #004c93 63.39%);
+
+  &-title {
+    width: 100%;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    &-title {
+      font-family: "Inter";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 20px;
+      line-height: 29px;
+
+      color: #ffffff;
+    }
+    &-image {
+      width: 100%;
+      max-width: 50px;
+      display: flex;
+      align-items: center;
+    }
+  }
+  &-control {
+    justify-content: end;
+    align-items: center;
+    width: 15%;
+    display: flex;
+    &-close {
+      width: 100%;
+      max-width: 50px;
+      max-height: 50px;
+      transition: 0.5s;
+      animation-name: openIn;
+      animation-duration: 1s;
+      animation-fill-mode: both;
+    }
+    &-open {
+      width: 100%;
+      max-width: 50px;
+      max-height: 50px;
+    }
+  }
+
+  &-items {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    justify-items: center;
+    background-color: #060b26;
+    max-width: 200px;
+    min-width: 200px;
+    width: 100%;
+    height: 67vh;
+    display: flex;
+    float: right;
+
+    position: fixed;
+    top: 48px;
+    flex-direction: column;
+    background: linear-gradient(110.17deg, #00aadf 66.04%, #004c93 85.24%);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+    &-table {
+      padding: 0;
+      display: grid;
+      align-content: stretch;
+      justify-content: space-evenly;
+      grid-gap: 10px;
+      align-items: baseline;
+      &-sidebar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        &-promotions {
+          background: #ffffff;
+          border-radius: 95px;
+          outline: none;
+          border: none;
+          margin-bottom: 10px;
+          width: 100%;
+          max-width: 140px;
+          min-width: 140px;
+          max-height: 40px;
+          min-height: 40px;
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 300;
+          font-size: 16px;
+          line-height: 24px;
+
+          color: #004c92;
+          height: 100%;
+        }
+      }
+      &-logout {
+        background: #ffffff;
+        border-radius: 95px;
+        outline: none;
+        border: none;
+        width: 100%;
+        max-width: 140px;
+        min-width: 140px;
+        max-height: 40px;
+        min-height: 40px;
+        height: 100%;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 24px;
+
+        color: #004c92;
+      }
+      &-buttons {
+        padding: 0;
+        display: grid;
+        align-content: stretch;
+        justify-content: space-evenly;
+        grid-gap: 10px;
+
+        &-cart {
+          background: #ffffff;
+          border-radius: 95px;
+          outline: none;
+          border: none;
+          width: 100%;
+          max-width: 40px;
+          min-width: 40px;
+          max-height: 40px;
+          min-height: 40px;
+          height: 100%;
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 300;
+          font-size: 20px;
+          line-height: 24px;
+
+          color: #004c92;
+        }
+        &-home {
+          background: #ffffff;
+          border-radius: 95px;
+          outline: none;
+          border: none;
+          width: 100%;
+          max-width: 40px;
+          min-width: 40px;
+          max-height: 40px;
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 300;
+          font-size: 20px;
+          line-height: 24px;
+
+          color: #004c92;
+          min-height: 40px;
+          height: 100%;
+        }
+        &-add {
+          background: #ffffff;
+          border-radius: 95px;
+          outline: none;
+          border: none;
+          width: 100%;
+          max-width: 40px;
+          min-width: 40px;
+          max-height: 40px;
+          min-height: 40px;
+          height: 100%;
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 300;
+          font-size: 20px;
+          line-height: 24px;
+
+          color: #004c92;
+          padding: 5px;
+        }
+        &-login {
+          background: #ffffff;
+          border-radius: 95px;
+          outline: none;
+          border: none;
+          width: 100%;
+          max-width: 40px;
+          min-width: 40px;
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 300;
+          font-size: 20px;
+          line-height: 24px;
+
+          color: #004c92;
+          max-height: 40px;
+          min-height: 40px;
+          height: 100%;
+        }
+      }
+      &-list {
+        list-style: none;
+        font-size: 1.2rem;
+
+        &-link {
+          text-decoration: none;
+          color: #444;
+          font-family: "Roboto", sans-serif;
+          font-weight: 500;
+          transition: color 0.3s ease-in-out;
+        }
+        &-link:hover {
+          color: #ff0000;
+          transition: color 0.3s ease-in-out;
+        }
+      }
+    }
+  }
+}
+@keyframes openIn {
+  0% {
+    transform-origin: center;
+    transform: rotate3d(0, 0, 1, -200deg);
+    opacity: 0;
+  }
+  100% {
+    transform-origin: center;
+    transform: none;
+    opacity: 1;
+  }
+}

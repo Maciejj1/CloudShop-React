@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import "./AddProducts.scss";
 import { storage, db } from "../../config/Config";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 const AddProducts = () => {
   const [productName, setProductName] = useState("");
   const [productPrice, setProductPrice] = useState(0);
   const [productDescription, setProductDescription] = useState("");
   const [productImg, setProductImg] = useState(null);
   const [error, setError] = useState("");
-
+  const history = useNavigate();
   const types = ["image/png", "image/jpeg"];
 
   const productImgHandler = (e) => {
@@ -54,6 +54,7 @@ const AddProducts = () => {
                 setProductDescription("");
                 setProductImg("");
                 setError("");
+                history("/CloudShop");
                 document.getElementById("file").value = "";
               })
               .catch((err) => setError(err.message));
@@ -64,53 +65,73 @@ const AddProducts = () => {
 
   return (
     <div className="container">
-      <h2>Dodaj Produkt</h2>
-      <hr />
-      <form autoComplete="off" className="form-group" onSubmit={addProduct}>
-        <label htmlFor="product-name">Nazwa</label>
-        <br />
-        <input
-          type="text"
-          className="form-control"
-          required
-          onChange={(e) => setProductName(e.target.value)}
-          value={productName}
-        />
-        <br />
-        <label htmlFor="product-price">Cena</label>
-        <br />
-        <input
-          type="number"
-          className="form-control"
-          required
-          onChange={(e) => setProductPrice(e.target.value)}
-          value={productPrice}
-        />
-        <br />
-        <label htmlFor="product-description">Opis</label>
-        <br />
-        <input
-          type="text"
-          className="form-control"
-          required
-          onChange={(e) => setProductDescription(e.target.value)}
-          value={productDescription}
-        />
-        <br />
-        <label htmlFor="product-img">Zdjęcie</label>
-        <br />
-        <input
-          type="file"
-          className="form-control"
-          onChange={productImgHandler}
-          id="file"
-        />
-        <br />
-        <button className="AddButtonProduct">Dodaj</button>
-      </form>
-      {error && <span>{error}</span>}
-      <div className="homecoming">
-        <Link to="/">Powrót</Link>
+      <div className="container-base">
+        <div className="container-base-title">
+          <h2 className="container-base-title-text">Dodaj Produkt</h2>
+        </div>
+
+        <hr className="container-base-hr" />
+        <form
+          autoComplete="off"
+          className="container-base-form"
+          onSubmit={addProduct}
+        >
+          <label htmlFor="product-name" />
+
+          <input
+            type="text"
+            className="container-base-form-control"
+            required
+            onChange={(e) => setProductName(e.target.value)}
+            value={productName}
+            placeholder="Nazwa"
+          />
+
+          <label htmlFor="product-price" />
+
+          <input
+            type="number"
+            className="container-base-form-control"
+            required
+            onChange={(e) => setProductPrice(e.target.value)}
+            value={productPrice}
+            placeholder="Cena"
+          />
+
+          <label htmlFor="product-description" />
+
+          <input
+            type="text"
+            className="container-base-form-control"
+            required
+            onChange={(e) => setProductDescription(e.target.value)}
+            value={productDescription}
+            placeholder="Opis"
+          />
+
+          <label htmlFor="file" className="container-base-form-picture">
+            Wybierz Zdjęcie
+          </label>
+
+          <input
+            type="file"
+            className="container-base-form-control"
+            onChange={productImgHandler}
+            id="file"
+            placeholder="Zdjęcie"
+          />
+
+          <button className="container-base-button">
+            <h2>Dodaj</h2>
+          </button>
+          <div className="container-base-button">
+            <Link to="/CloudShop" className="container-base-button-link">
+              <h2>Powrót</h2>
+            </Link>
+          </div>
+        </form>
+
+        {error && <span>{error}</span>}
       </div>
     </div>
   );

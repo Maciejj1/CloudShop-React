@@ -9,7 +9,7 @@ const Navigation = () => {
   const location = useLocation();
 
   return (
-    <div>
+    <div className="navigation">
       <div className="buttton">
         <button
           component={Link}

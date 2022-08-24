@@ -8,6 +8,8 @@ import Particles from "react-tsparticles";
 import { auth } from "../../config/Config";
 import "./Home.scss";
 import { useNavigate } from "react-router-dom";
+import BurgerMenu from "../NavBar/BurgerMenu";
+import { useMediaQuery } from "react-responsive";
 const Home = ({ user }) => {
   const history = useNavigate();
   useEffect(() => {
@@ -17,11 +19,18 @@ const Home = ({ user }) => {
       }
     });
   });
-
+  const Phone = useMediaQuery({
+    query: "(max-width: 1023px)",
+  });
+  const Desktop = useMediaQuery({
+    query: "(min-width: 1024px)",
+  });
   return (
     <div className="home">
-      <Navbar user={user} />
-      <SliderBar />
+      {Phone && <BurgerMenu user={user} />}
+      {Desktop && <Navbar user={user} />}
+      {Desktop && <SliderBar />}
+
       <Products />
     </div>
   );

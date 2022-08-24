@@ -1,85 +1,105 @@
-.navbarr {
-  width: auto;
-  height: 100px;
-  padding-right: 46px;
-  margin-left: -20px;
-  background-color: #4dbbee;
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200&family=Poppins&family=Roboto:wght@100&display=swap");
+@media screen and (max-width: 1023px) {
+}
+@media screen and (min-width: 1024px) {
+  .navbar {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    &-base {
+      background: #fff;
+      font-family: "Inter", sans-serif;
+      text-transform: uppercase;
+      align-items: center;
+      display: flex;
+      justify-content: space-between;
+      z-index: 2;
+      align-items: center;
+      &-image {
+        width: 100%;
+        margin-left: 10px;
+        &-logo {
+        }
+      }
+      &-text {
+        font-family: "Roboto", sans-serif;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 16px;
+        align-items: center;
+        background: radial-gradient(
+          50% 50% at 50% 50%,
+          #ff5c5c 82.29%,
+          #ff0000 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        width: 60%;
+        &-title {
+        }
+      }
 
-  display: flex;
-  justify-content: center;
-  margin-bottom: 15px;
-  margin-top: 0px;
-}
+      &-links {
+        width: 70%;
+        &-link {
+          margin-left: 20px;
+          background: linear-gradient(
+            103.84deg,
+            #ff5c5c 17.57%,
+            #740000 149.04%
+          );
+          border-radius: 56px;
+        }
+        &-table {
+          list-style-type: none;
+          padding: 0px;
+          width: 540px;
+          display: flex;
+          justify-content: space-evenly;
+          &-list {
+            &link:hover {
+              -webkit-filter: grayscale(100%);
+              filter: grayscale(100%);
+            }
+            &-link {
+              width: 100px;
+              text-align: center;
+              font-size: 15px;
+              color: rgb(255, 255, 255);
+              text-decoration: none;
+              cursor: pointer;
 
-.Badge {
-  float: right;
-  color: rgb(255, 255, 255);
-}
-.HomeButton {
-  float: right;
-  align-items: center;
-  color: rgb(255, 255, 255);
-  margin-top: 67px;
-  background-color: #52bad4;
-  border: none;
-  z-index: 9999;
-}
-.image {
-  width: 200px;
-  align-items: left;
-}
+              &-title {
+                text-align: center;
+                font-size: 14px;
+                padding: 10px;
+                height: 20px;
+                width: 80px;
+                font-family: "Poppins", sans-serif;
+                transition: 0.5s;
+                z-index: 2;
+                font-size: 14px;
+                color: #ffffff;
+                background: linear-gradient(
+                  103.84deg,
+                  #ff5c5c 17.57%,
+                  #740007 149.04%
+                );
 
-.IconButton {
-  padding-top: 3px;
-  margin-top: 67px;
-  background-color: #52bad4;
-  border: none;
-  margin-left: 1px;
-  float: right;
-}
-.LoginButton {
-  float: right;
-  align-items: center;
-  color: rgb(255, 255, 255);
-  padding-top: -1px;
-  margin-top: 67px;
-  margin-right: 1px;
-  background-color: #52bad4;
-  border: none;
-}
-.buttton {
-  width: 100%;
-  align-items: right;
-  margin-left: 450px;
-}
-.Add {
-  float: right;
-  align-items: center;
-  margin-top: 64px;
-  margin-right: 1px;
-  color: rgb(255, 255, 255);
-  padding: 3px;
-}
-.ADDBUTTON {
-  background-color: #52bad4;
-  border: none;
-  color: rgb(255, 255, 255);
+                border-radius: 56px;
+              }
 
-  margin-right: -3px;
-}
-.navlinks {
-  float: right;
-  margin-left: 5px;
-  background-color: white;
-  text-decoration: none;
-
-  padding: 3px;
-}
-.navlinkss {
-  float: right;
-  margin-left: 5px;
-  background-color: white;
-  text-decoration: none;
-  display: flex-end;
-  padding: 3px;
+              &-img {
+                width: 40%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }
