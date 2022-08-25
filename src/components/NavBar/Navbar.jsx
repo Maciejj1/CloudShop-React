@@ -1,14 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import logo from "../Assets/logo.png";
 import "./Navbar.scss";
 import Navigation from "../Navigation/Navigation";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../../config/Config";
 import { useMediaQuery } from "react-responsive";
 import BurgerMenu from "./BurgerMenu";
+import { ShoppingCart, Home } from "@material-ui/icons";
+import { IconButton, Badge } from "@material-ui/core";
+import LoginIcon from "@mui/icons-material/Login";
+import AddIcon from "@mui/icons-material/Add";
 import "./Navbar.scss";
+import { CartContext } from "../Cart/CartContext";
 const Navbar = ({ user }) => {
+  const { totalQty } = useContext(CartContext);
   const Phone = useMediaQuery({
     query: "(max-width: 1023px)",
   });
@@ -21,9 +27,9 @@ const Navbar = ({ user }) => {
       history("/login");
     });
   };
-
+  const location = useLocation();
   return (
-    <div className="navbar">
+    <div className="navbar-container">
       <div className="navbar-container-desktop">
         <div className="navbar-container-desktop-content">
           <img
@@ -31,61 +37,55 @@ const Navbar = ({ user }) => {
             className="navbar-container-desktop-content-image"
             alt="default"
           />
-          <h2 className="navbar-container-desktop-content-title">
-            MACIEJ WAWRYSZUK
-          </h2>
+          <h2 className="navbar-container-desktop-content-title">CLOUDSHOP</h2>
         </div>
         <ul className="navbar-container-desktop-table">
-          <li className="navbar-container-desktop-table-list-link">
-            <a
-              className="navbar-container-desktop-table-list-link"
-              to="about"
-              smooth="true"
-              duration={1800}
+          <li className="navbar-container-desktop-table-list">
+            <button
+              className="navbar-container-desktop-table-list-logout"
+              onClick={handleLogout}
             >
-              <div className="navbar-container-desktop-table-list-link-title">
-                About Me
-              </div>
-            </a>
+              Wyloguj
+            </button>
           </li>
 
-          <li className="navbar-container-desktop-table-list-link">
-            <a
-              className="navbar-container-desktop-table-list-link"
-              to="education"
-              smooth="true"
-              duration={1800}
+          <li className="navbar-container-desktop-table-list">
+            <Link
+              component={Link}
+              to="/cartproducts"
+              className="navbar-container-desktop-table-list-button"
+              aria-label="Show-cart-items"
             >
-              <div className="navbar-container-desktop-table-list-link-title">
-                Education
-              </div>
-            </a>
+              <Badge
+                className="Badge"
+                badgeContent={totalQty}
+                color="secondary"
+              >
+                <ShoppingCart />
+              </Badge>
+            </Link>
           </li>
 
-          <li className="navbar-container-desktop-table-list-link">
-            <a
-              className="navbar-container-desktop-table-list-link"
-              to="learn"
-              smooth="true"
-              duration={1800}
+          <li className="navbar-container-desktop-table-list">
+            <Link
+              component={Link}
+              to="/"
+              className="navbar-container-desktop-table-list-button"
+              aria-label="Home-page"
             >
-              <div className="navbar-container-desktop-table-list-link-title">
-                Can Do
+              <div className="burger-items-table-buttons-home-container">
+                <Home />
               </div>
-            </a>
+            </Link>
           </li>
 
-          <li className="navbar-container-desktop-table-list-link">
-            <a
-              className="navbar-container-desktop-table-list-link"
-              to="projeects"
-              smooth="true"
-              duration={1800}
+          <li className="navbar-container-desktop-table-list">
+            <Link
+              to="/addproducts"
+              className="navbar-container-desktop-table-list-button"
             >
-              <div className="navbar-container-desktop-table-list-link-title">
-                Projects
-              </div>
-            </a>
+              <AddIcon />
+            </Link>
           </li>
         </ul>
       </div>

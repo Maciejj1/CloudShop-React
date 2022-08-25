@@ -60,7 +60,7 @@
     max-width: 200px;
     min-width: 200px;
     width: 100%;
-    height: 67vh;
+    height: 72vh;
     display: flex;
     float: right;
 
@@ -89,8 +89,8 @@
           border: none;
           margin-bottom: 10px;
           width: 100%;
-          max-width: 140px;
-          min-width: 140px;
+          max-width: 130px;
+          min-width: 130px;
           max-height: 40px;
           min-height: 40px;
           font-family: "Inter";
@@ -109,8 +109,8 @@
         outline: none;
         border: none;
         width: 100%;
-        max-width: 140px;
-        min-width: 140px;
+        max-width: 130px;
+        min-width: 130px;
         max-height: 40px;
         min-height: 40px;
         height: 100%;
@@ -119,7 +119,7 @@
         font-weight: 300;
         font-size: 16px;
         line-height: 24px;
-
+        margin-top: 25px;
         color: #004c92;
       }
       &-buttons {
@@ -131,7 +131,7 @@
 
         &-cart {
           background: #ffffff;
-          border-radius: 95px;
+          border-radius: 55px;
           outline: none;
           border: none;
           width: 100%;
@@ -140,12 +140,9 @@
           max-height: 40px;
           min-height: 40px;
           height: 100%;
-          font-family: "Inter";
-          font-style: normal;
-          font-weight: 300;
-          font-size: 20px;
-          line-height: 24px;
-
+          display: flex;
+          justify-content: center;
+          align-items: center;
           color: #004c92;
         }
         &-home {
@@ -157,12 +154,9 @@
           max-width: 40px;
           min-width: 40px;
           max-height: 40px;
-          font-family: "Inter";
-          font-style: normal;
-          font-weight: 300;
-          font-size: 20px;
-          line-height: 24px;
-
+          display: flex;
+          justify-content: center;
+          align-items: center;
           color: #004c92;
           min-height: 40px;
           height: 100%;
@@ -177,6 +171,9 @@
           min-width: 40px;
           max-height: 40px;
           min-height: 40px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           height: 100%;
           font-family: "Inter";
           font-style: normal;
@@ -197,6 +194,9 @@
           min-width: 40px;
           font-family: "Inter";
           font-style: normal;
+          display: flex;
+          justify-content: center;
+          align-items: center;
           font-weight: 300;
           font-size: 20px;
           line-height: 24px;

@@ -1,0 +1,21 @@
+.alert {
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  &-text {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 25px;
+    align-items: center;
+    line-height: 39px;
+
+    background: linear-gradient(94.38deg, #00d1ff -4.28%, #004c92 53.56%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+  }
+}

@@ -1,0 +1,62 @@
+.slider {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &-base {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    max-width: 950px;
+    min-width: 950px;
+    align-items: center;
+    transition: 0.5s;
+    padding: 20px 20px 20px;
+    border-radius: 60px;
+    background: linear-gradient(93.47deg, #00d1ff -10.14%, #004c93 63.39%);
+    &-search {
+      &-input {
+        background: #ffffff;
+        border-radius: 95px;
+        outline: none;
+        border: none;
+        width: 100%;
+        max-width: 200px;
+        min-width: 200px;
+        max-height: 30px;
+        min-height: 30px;
+        height: 100%;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 15px;
+        text-align: center;
+        line-height: 24px;
+
+        margin-right: 25px;
+        color: #004c92;
+      }
+    }
+    &-buttons {
+      &-button {
+        background: #ffffff;
+        border-radius: 95px;
+        outline: none;
+        border: none;
+        width: 100%;
+        max-width: 130px;
+        min-width: 130px;
+        max-height: 30px;
+        min-height: 30px;
+        height: 100%;
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 24px;
+        margin-right: 25px;
+        color: #004c92;
+      }
+    }
+  }
+}

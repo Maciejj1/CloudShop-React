@@ -27,7 +27,7 @@ const Register = (props) => {
             setEmail("");
             setPassword("");
             setError("");
-            history("/login");
+            history("/");
           })
           .catch((err) => setError(err.message));
       })

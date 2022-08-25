@@ -2,101 +2,89 @@
 @media screen and (max-width: 1023px) {
 }
 @media screen and (min-width: 1024px) {
-  .navbar {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    height: auto;
-    &-base {
-      background: #fff;
-      font-family: "Inter", sans-serif;
-      text-transform: uppercase;
-      align-items: center;
+  $home: #05386b;
+  $text: #115faf;
+  $codepen: #5cdb95;
+  $github: #8ee4af;
+  $background: #edf5e1;
+  @import url("https://fonts.googleapis.com/css?family=Roboto&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200&family=Roboto:wght@100&display=swap");
+  @import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200&family=Poppins&family=Roboto:wght@100&display=swap");
+
+  .navbar-container {
+    &-desktop {
       display: flex;
-      justify-content: space-between;
-      z-index: 2;
-      align-items: center;
-      &-image {
+      justify-content: center;
+      width: 100%;
+
+      transition: 0.5s;
+      background: linear-gradient(93.47deg, #00d1ff -10.14%, #004c93 63.39%);
+      &-content {
         width: 100%;
-        margin-left: 10px;
-        &-logo {
-        }
-      }
-      &-text {
-        font-family: "Roboto", sans-serif;
-        font-style: normal;
-        font-weight: 700;
-        font-size: 16px;
+        display: flex;
         align-items: center;
-        background: radial-gradient(
-          50% 50% at 50% 50%,
-          #ff5c5c 82.29%,
-          #ff0000 100%
-        );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        background-clip: text;
-        text-fill-color: transparent;
-        width: 60%;
+        justify-content: flex-start;
+        &-image {
+          width: 100%;
+          max-width: 70px;
+          display: flex;
+          align-items: center;
+        }
         &-title {
+          font-family: "Inter";
+          font-style: normal;
+          font-weight: 600;
+          font-size: 25px;
+          line-height: 29px;
+
+          color: #ffffff;
         }
       }
-
-      &-links {
-        width: 70%;
-        &-link {
-          margin-left: 20px;
-          background: linear-gradient(
-            103.84deg,
-            #ff5c5c 17.57%,
-            #740000 149.04%
-          );
-          border-radius: 56px;
-        }
-        &-table {
-          list-style-type: none;
-          padding: 0px;
-          width: 540px;
+      &-table {
+        list-style-type: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        &-list {
           display: flex;
-          justify-content: space-evenly;
-          &-list {
-            &link:hover {
-              -webkit-filter: grayscale(100%);
-              filter: grayscale(100%);
-            }
-            &-link {
-              width: 100px;
-              text-align: center;
-              font-size: 15px;
-              color: rgb(255, 255, 255);
-              text-decoration: none;
-              cursor: pointer;
+          justify-content: center;
+          align-items: center;
+          margin-top: 10px;
 
-              &-title {
-                text-align: center;
-                font-size: 14px;
-                padding: 10px;
-                height: 20px;
-                width: 80px;
-                font-family: "Poppins", sans-serif;
-                transition: 0.5s;
-                z-index: 2;
-                font-size: 14px;
-                color: #ffffff;
-                background: linear-gradient(
-                  103.84deg,
-                  #ff5c5c 17.57%,
-                  #740007 149.04%
-                );
-
-                border-radius: 56px;
-              }
-
-              &-img {
-                width: 40%;
-              }
-            }
+          &-logout {
+            background: #ffffff;
+            border-radius: 95px;
+            outline: none;
+            border: none;
+            width: 100%;
+            max-width: 130px;
+            min-width: 130px;
+            max-height: 30px;
+            min-height: 30px;
+            height: 100%;
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 300;
+            font-size: 16px;
+            margin-right: 10px;
+            color: #004c92;
+          }
+          &-button {
+            background: #ffffff;
+            border-radius: 55px;
+            outline: none;
+            border: none;
+            width: 100%;
+            max-width: 30px;
+            min-width: 30px;
+            max-height: 30px;
+            min-height: 30px;
+            height: 100%;
+            margin-right: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #004c92;
           }
         }
       }

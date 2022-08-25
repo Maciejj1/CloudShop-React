@@ -19,7 +19,7 @@ const Login = () => {
         setEmail("");
         setPassword("");
         setError("");
-        history("/CloudShop");
+        history("/");
       })
       .catch((error) => setError(error.message));
   };

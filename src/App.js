@@ -6,7 +6,9 @@ import { ProductsContextProvider } from "./components/ProductsContext/ProductsCo
 import "./App.scss";
 import Particles from "react-tsparticles";
 import { auth, db } from "./config/Config";
-
+import DetailProducts from "./components/Products/DetailProducts";
+import Cart from "./components/Cart/Cart";
+import { CartContextProvider } from "../src/components/Cart/CartContext";
 class App extends React.Component {
   state = {
     user: null,
@@ -34,17 +36,21 @@ class App extends React.Component {
     return (
       <div className="App">
         <ProductsContextProvider>
-          <Router>
-            <Routes>
-              <Route
-                path="/CloudShop/"
-                element={<Home user={this.state.user} />}
-              />
-              <Route path="/addproducts" element={<AddProducts />} />
-              <Route path="/Register" element={<Register />} />
-              <Route path="/Login" element={<Login />} />
-            </Routes>
-          </Router>
+          <CartContextProvider>
+            <Router basename="/CloudShop">
+              <Routes>
+                <Route path="/" element={<Home user={this.state.user} />} />
+                <Route path="/addproducts" element={<AddProducts />} />
+                <Route path="/Register" element={<Register />} />
+                <Route path="/Login" element={<Login />} />
+                <Route
+                  path="/product/:ProductID"
+                  element={<DetailProducts />}
+                />
+                <Route path="/cartproducts" element={<Cart />} />
+              </Routes>
+            </Router>
+          </CartContextProvider>
         </ProductsContextProvider>
       </div>
     );

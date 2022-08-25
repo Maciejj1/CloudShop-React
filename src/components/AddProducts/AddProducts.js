@@ -54,7 +54,7 @@ const AddProducts = () => {
                 setProductDescription("");
                 setProductImg("");
                 setError("");
-                history("/CloudShop");
+                history("/");
                 document.getElementById("file").value = "";
               })
               .catch((err) => setError(err.message));
@@ -125,7 +125,7 @@ const AddProducts = () => {
             <h2>Dodaj</h2>
           </button>
           <div className="container-base-button">
-            <Link to="/CloudShop" className="container-base-button-link">
+            <Link to="/" className="container-base-button-link">
               <h2>Powrót</h2>
             </Link>
           </div>

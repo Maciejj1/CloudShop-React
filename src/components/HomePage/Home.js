@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../NavBar/Navbar";
 import Products from "../Products/Products";
@@ -10,7 +10,12 @@ import "./Home.scss";
 import { useNavigate } from "react-router-dom";
 import BurgerMenu from "../NavBar/BurgerMenu";
 import { useMediaQuery } from "react-responsive";
-const Home = ({ user }) => {
+const Home = ({ user, props }) => {
+  const [Input, setInput] = useState("");
+  let InputHandle = (e) => {
+    var LowerCase = e.target.value.toLowerCase();
+    setInput(LowerCase);
+  };
   const history = useNavigate();
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
@@ -31,7 +36,7 @@ const Home = ({ user }) => {
       {Desktop && <Navbar user={user} />}
       {Desktop && <SliderBar />}
 
-      <Products />
+      <Products input={Input} />
     </div>
   );
 };
