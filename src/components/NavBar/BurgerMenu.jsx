@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import righty from "../Assets/righty.png";
 import lefty from "../Assets/lefty.png";
 import logo from "../Assets/logo.png";
@@ -9,16 +9,17 @@ import { ShoppingCart, Home } from "@material-ui/icons";
 import { IconButton, Badge } from "@material-ui/core";
 import LoginIcon from "@mui/icons-material/Login";
 import { Link, useLocation } from "react-router-dom";
-
+import { CartContext } from "../Cart/CartContext";
 import AddIcon from "@mui/icons-material/Add";
 import Navigation from "../Navigation/Navigation";
-const BurgerMenu = () => {
+const BurgerMenu = ({ user }) => {
   const history = useNavigate();
   const handleLogout = () => {
     auth.signOut().then(() => {
-      history("/login");
+      history("/");
     });
   };
+  const { totalQty } = useContext(CartContext);
   const location = useLocation();
   const [open, setOpen] = useState(false);
   return (
@@ -52,51 +53,53 @@ const BurgerMenu = () => {
       {open && (
         <div className="burger-items">
           <ul className="burger-items-table">
-            <button
-              className="burger-items-table-logout"
-              onClick={handleLogout}
-            >
-              Wyloguj
-            </button>
-            <div className="burger-items-table-buttons">
+            {user ? (
               <button
+                className="burger-items-table-logout"
+                onClick={handleLogout}
+              >
+                Wyloguj
+              </button>
+            ) : (
+              <li id="nuser" className="burger-items-table-list">
+                <Link to="login" className="burger-items-table-list-button">
+                  Zaloguj
+                </Link>
+              </li>
+            )}
+
+            <div className="burger-items-table-buttons">
+              <Link
                 component={Link}
-                to="/Cart"
+                to="/cartproducts"
                 className="burger-items-table-buttons-cart"
                 aria-label="Show-cart-items"
               >
-                <Badge className="Badge" badgeContent={2} color="secondary">
+                <Badge
+                  className="Badge"
+                  badgeContent={totalQty}
+                  color="secondary"
+                >
                   <ShoppingCart />
                 </Badge>
-              </button>
-              {location.pathname === "/" && (
-                <button
-                  component={Link}
-                  to="/"
-                  className="burger-items-table-buttons-home"
-                  aria-label="Home-page"
-                >
-                  <div className="burger-items-table-buttons-home-container">
-                    <Home />
-                  </div>
-                </button>
-              )}
+              </Link>
+
+              <Link
+                component={Link}
+                to="/"
+                className="burger-items-table-buttons-home"
+                aria-label="Home-page"
+              >
+                <div className="burger-items-table-buttons-home-container">
+                  <Home />
+                </div>
+              </Link>
 
               <div className="burger-items-table-buttons-add">
                 <Link to="/addproducts">
                   <AddIcon />
                 </Link>
               </div>
-              <button
-                component={Link}
-                to="/Login"
-                type="button"
-                className="burger-items-table-buttons-login"
-              >
-                <div className="Login">
-                  <LoginIcon />
-                </div>
-              </button>
             </div>
             <div className="burger-items-table-sidebar">
               <button className="burger-items-table-sidebar-promotions">

@@ -32,7 +32,7 @@ const Products = (e) => {
     <>
       {products.length !== 0 && <h2 className="for-u">Wybrane dla ciebie</h2>}
       <div className="products">
-        {isOpen && (
+        {/* {isOpen && (
           <Popup
             content={
               <div key={products.ProductID}>
@@ -42,7 +42,7 @@ const Products = (e) => {
             }
             handleClose={togglePopup}
           />
-        )}
+        )} */}
         {products.length === 0 && <div>Wolny net lub nie ma produktów</div>}
         {products.map((product, i) => (
           <div className="products-card" key={product.ProductId}>

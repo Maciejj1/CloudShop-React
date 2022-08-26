@@ -31,13 +31,13 @@ class App extends React.Component {
       }
     });
   }
-
+  // user={this.state.user}
   render() {
     return (
       <div className="App">
         <ProductsContextProvider>
           <CartContextProvider>
-            <Router basename="/CloudShop">
+            <Router basename="/CloudShop" user={this.state.user}>
               <Routes>
                 <Route path="/" element={<Home user={this.state.user} />} />
                 <Route path="/addproducts" element={<AddProducts />} />

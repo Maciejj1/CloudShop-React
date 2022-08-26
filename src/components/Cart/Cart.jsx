@@ -9,6 +9,9 @@ import { useNavigate } from "react-router-dom";
 import { auth } from "../../config/Config.js";
 import { Icon } from "react-icons-kit";
 import Navbar from "../NavBar/Navbar";
+import { useMediaQuery } from "react-responsive";
+import BurgerMenu from "../NavBar/BurgerMenu";
+import "./Cart.scss";
 export const Cart = ({ user }) => {
   const { shoppingCart, dispatch, totalPrice, totalQty } =
     useContext(CartContext);
@@ -20,18 +23,29 @@ export const Cart = ({ user }) => {
       }
     });
   });
+  const Phone = useMediaQuery({
+    query: "(max-width: 1023px)",
+  });
+  const Desktop = useMediaQuery({
+    query: "(min-width: 1024px)",
+  });
   return (
     <div className="cart">
-      <Navbar />
+      {Desktop && <Navbar />}
+      {Phone && <BurgerMenu />}
       <div className="cart-base">
         {shoppingCart.length !== 0 && <h1>Koszyk</h1>}
         {shoppingCart.length === 0 && (
           <>
             <div className="cart-base-error">
-              Nie ma nic? Zaloguj się lub odśwież stronę
+              <h2 className="cart-base-error-text">
+                Nie ma nic? Zaloguj się lub odśwież stronę
+              </h2>
             </div>
             <div className="cart-base-link">
-              <Link to="/">Wróć na główną stronę</Link>
+              <Link to="/" className="cart-base-link-link">
+                Wróć na główną stronę
+              </Link>
             </div>
           </>
         )}

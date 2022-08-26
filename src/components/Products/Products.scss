@@ -78,15 +78,14 @@
         justify-content: center;
         align-items: center;
         padding: 5px;
-
         &-buy {
           background: #ffffff;
           width: 100%;
           min-width: 100px;
+          border: none;
           max-width: 100px;
           height: 100%;
           min-height: 27px;
-
           border-radius: 74px;
           text-decoration: none;
           h4 {
@@ -95,7 +94,7 @@
             font-weight: 300;
             font-size: 12px;
             line-height: 12px;
-
+            margin-top: 10px;
             background: linear-gradient(
               116.24deg,
               #00d1ff 0.75%,
@@ -105,12 +104,11 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-fill-color: transparent;
-            margin-top: 8px;
-            margin-left: 15px;
           }
         }
         &-cart {
           background: #ffffff;
+          border: none;
           border-radius: 74px;
           text-decoration: none;
           width: 100%;
@@ -126,8 +124,7 @@
             font-weight: 300;
             font-size: 12px;
             line-height: 12px;
-            margin-top: 8px;
-            margin-left: 15px;
+            margin-top: 10px;
             background: linear-gradient(
               116.24deg,
               #00d1ff 0.75%,
@@ -137,6 +134,36 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
             text-fill-color: transparent;
+          }
+        }
+        &-more {
+          background: #ffffff;
+          width: 100%;
+          min-width: 100px;
+          max-width: 100px;
+          height: 100%;
+          min-height: 27px;
+          border-radius: 74px;
+          text-decoration: none;
+          outline: none;
+          border: none;
+          h4 {
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 300;
+            font-size: 12px;
+            line-height: 12px;
+
+            background: linear-gradient(
+              116.24deg,
+              #00d1ff 0.75%,
+              #004c92 66.51%
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            margin-top: 10px;
           }
         }
       }
@@ -231,7 +258,6 @@
           max-width: 100px;
           height: 100%;
           min-height: 27px;
-
           border-radius: 74px;
           text-decoration: none;
           outline: none;

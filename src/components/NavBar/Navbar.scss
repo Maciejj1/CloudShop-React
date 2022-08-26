@@ -67,6 +67,7 @@
             font-weight: 300;
             font-size: 16px;
             margin-right: 10px;
+            text-decoration: none;
             color: #004c92;
           }
           &-button {
@@ -85,6 +86,25 @@
             justify-content: center;
             align-items: center;
             color: #004c92;
+          }
+          &-button2 {
+            background: #ffffff;
+            border-radius: 55px;
+            outline: none;
+            border: none;
+            width: 100%;
+            max-width: 130px;
+            min-width: 130px;
+            max-height: 30px;
+            min-height: 30px;
+            height: 100%;
+            margin-right: 10px;
+            font-weight: 100;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #004c92;
+            text-decoration: none;
           }
         }
       }

@@ -17,10 +17,18 @@ const Home = ({ user, props }) => {
     setInput(LowerCase);
   };
   const history = useNavigate();
+  // useEffect(() => {
+  //   auth.onAuthStateChanged((user) => {
+  //     if (!user) {
+  //       history("/login");
+  //     }
+  //   });
+  // });
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (!user) {
-        history("/login");
+        <div className="home"></div>;
+      } else {
       }
     });
   });

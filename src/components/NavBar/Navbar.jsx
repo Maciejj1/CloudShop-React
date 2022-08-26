@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import logo from "../Assets/logo.png";
 import "./Navbar.scss";
 import Navigation from "../Navigation/Navigation";
@@ -24,7 +24,7 @@ const Navbar = ({ user }) => {
   const history = useNavigate();
   const handleLogout = () => {
     auth.signOut().then(() => {
-      history("/login");
+      history("/");
     });
   };
   const location = useLocation();
@@ -40,14 +40,32 @@ const Navbar = ({ user }) => {
           <h2 className="navbar-container-desktop-content-title">CLOUDSHOP</h2>
         </div>
         <ul className="navbar-container-desktop-table">
-          <li className="navbar-container-desktop-table-list">
-            <button
-              className="navbar-container-desktop-table-list-logout"
-              onClick={handleLogout}
-            >
-              Wyloguj
-            </button>
-          </li>
+          {user && (
+            <li id="user" className="navbar-container-desktop-table-list">
+              <button
+                className="navbar-container-desktop-table-list-logout"
+                onClick={handleLogout}
+              >
+                Wyloguj
+              </button>
+            </li>
+          )}
+          {!user && (
+            <li id="nuser" className="navbar-container-desktop-table-list">
+              <Link
+                to="login"
+                className="navbar-container-desktop-table-list-button2"
+              >
+                Logowanie
+              </Link>
+              <Link
+                to="register"
+                className="navbar-container-desktop-table-list-button2"
+              >
+                Rejestracja
+              </Link>
+            </li>
+          )}
 
           <li className="navbar-container-desktop-table-list">
             <Link

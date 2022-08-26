@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "./AddProducts.scss";
-import { storage, db } from "../../config/Config";
+import { useEffect } from "react";
+import { storage, db, auth } from "../../config/Config";
 import { Link, useNavigate } from "react-router-dom";
 const AddProducts = () => {
   const [productName, setProductName] = useState("");
@@ -21,7 +22,13 @@ const AddProducts = () => {
       setError("Ten typ pliku nie jest obsługiwany , Wybierz PNG lub JPEG");
     }
   };
-
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if (!user) {
+        history("/login");
+      }
+    });
+  });
   const addProduct = (e) => {
     e.preventDefault();
     const uploadTask = storage
