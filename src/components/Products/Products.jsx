@@ -55,7 +55,9 @@ const Products = (e) => {
                 onClick={togglePopup}
               />
             </div>
-            <div className="products-card-price">{product.ProductPrice}$</div>
+            <div className="products-card-price">
+              {product.ProductPrice} PLN
+            </div>
             <div className="products-card-buttons">
               <button
                 src={up}

@@ -31,8 +31,8 @@ export const Cart = ({ user }) => {
   });
   return (
     <div className="cart">
-      {Desktop && <Navbar />}
-      {Phone && <BurgerMenu />}
+      {Desktop && <Navbar user={user} />}
+      {Phone && <BurgerMenu user={user} />}
       <div className="cart-base">
         {shoppingCart.length !== 0 && <h1>Koszyk</h1>}
         {shoppingCart.length === 0 && (
@@ -53,30 +53,45 @@ export const Cart = ({ user }) => {
           shoppingCart.map((cart) => (
             <div className="cart-base-content" key={cart.ProductID}>
               <div className="cart-base-content-image">
-                <img src={cart.ProductImg} alt="nie wczytało :(" />
+                <img
+                  src={cart.ProductImg}
+                  alt="nie wczytało :("
+                  className="cart-base-content-image-picture"
+                />
               </div>
-              <div className="cart-base-content-name">{cart.ProductName}</div>
+              <div className="cart-base-content-name">
+                {cart.ProductName}
+                <div className="cart-base-content-name-items">
+                  <div
+                    className="cart-base-content-name-items-inc"
+                    onClick={() =>
+                      dispatch({ type: "INC", id: cart.ProductID, cart })
+                    }
+                  >
+                    <Icon icon={ic_add} size={23} />
+                  </div>
+                  <div className="cart-base-content-name-items-lic">2</div>
+                  <div
+                    className="cart-base-content-name-items-dec"
+                    onClick={() =>
+                      dispatch({ type: "DEC", id: cart.ProductID, cart })
+                    }
+                  >
+                    <Icon
+                      icon={ic_remove}
+                      size={23}
+                      className="cart-base-content-name-items-dec-icon"
+                    />
+                  </div>
+                </div>
+              </div>
               <div className="cart-base-content-price">
-                {cart.ProductAmount}
+                Cena: {cart.ProductPrice} PLN
+                <div className="cart-base-cotent-price-cancel"></div>
               </div>
-              <div
-                className="cart-base-content-inc"
-                onClick={() =>
-                  dispatch({ type: "INC", id: cart.ProductID, cart })
-                }
-              >
-                <Icon icon={ic_add} size={23} />
-              </div>
-              <div
-                className="cart-base-content-dec"
-                onClick={() =>
-                  dispatch({ type: "DEC", id: cart.ProductID, cart })
-                }
-              >
-                <Icon icon={ic_remove} size={23} />
-              </div>
+
               <div className="cart-base-content-cart">
-                {cart.TotaProductPrice}
+                Cena Finalna: {cart.TotalProductPrice} PLN
               </div>
               <button
                 className="cart-base-content-cart-button"
@@ -84,19 +99,29 @@ export const Cart = ({ user }) => {
                   dispatch({ type: "DELETE", id: cart.ProductID, cart })
                 }
               >
-                <Icon icon={iosTrashOutline} size={24} />
+                <Icon
+                  icon={iosTrashOutline}
+                  size={30}
+                  className="cart-base-content-name-items-cart-button-icon"
+                />
               </button>
             </div>
           ))}
         {shoppingCart.length > 0 && (
           <div className="cart-base-summary">
             <div className="cart-base-summary-heading">Podsumowanie</div>
-            <div className="cart-base-summary-price">
-              <span className="cart-base-summary-price-text">Całość: </span>
-              <span className="cart-base-summary-price-text">{totalPrice}</span>
+            <div className="cart-base-summary-promotion">
+              <input type="text" placeholder="Kod Rabatowy" />
+              <button>Zatwierdz</button>
             </div>
             <div className="cart-base-summary-price">
-              <span className="cart-base-summary-price-text">Items: </span>
+              <span className="cart-base-summary-price-text">Całość: </span>
+              <span className="cart-base-summary-price-text">
+                {totalPrice} PLN
+              </span>
+            </div>
+            <div className="cart-base-summary-price">
+              <span className="cart-base-summary-price-text">Ilość: </span>
               <span className="cart-base-summary-price-text">{totalQty}</span>
             </div>
             <Link to="cashout" className="cart-base-summary-cashout">

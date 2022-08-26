@@ -37,6 +37,20 @@ export const CartReducer = (state, action) => {
         };
       }
       break;
+    case "LIC":
+      product = action.cart;
+      product.qty = product.qty;
+      product.TotalProductPrice = product.qty * product.ProductPrice;
+      updatedQty = totalQty;
+      updatePrice = totalPrice + product.ProductPrice;
+      index = shoppingCart.findIndex((cart) => cart.ProductID === action.id);
+      shoppingCart[index] = product;
+      return {
+        shoppingCart: [...shoppingCart],
+        totalPrice: updatePrice,
+        totalQty: product.qty,
+      };
+      break;
     case "INC":
       product = action.cart;
       product.qty = ++product.qty;
