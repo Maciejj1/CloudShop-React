@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/CloudShop/static/css/main.65870a37.css",
-    "main.js": "/CloudShop/static/js/main.c4a4663c.js",
+    "main.css": "/CloudShop/static/css/main.0ae17448.css",
+    "main.js": "/CloudShop/static/js/main.708032de.js",
     "index.html": "/CloudShop/index.html",
-    "main.65870a37.css.map": "/CloudShop/static/css/main.65870a37.css.map",
-    "main.c4a4663c.js.map": "/CloudShop/static/js/main.c4a4663c.js.map"
+    "main.0ae17448.css.map": "/CloudShop/static/css/main.0ae17448.css.map",
+    "main.708032de.js.map": "/CloudShop/static/js/main.708032de.js.map"
   },
   "entrypoints": [
-    "static/css/main.65870a37.css",
-    "static/js/main.c4a4663c.js"
+    "static/css/main.0ae17448.css",
+    "static/js/main.708032de.js"
   ]
 }
