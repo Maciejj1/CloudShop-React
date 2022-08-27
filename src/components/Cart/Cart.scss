@@ -323,6 +323,7 @@
               max-width: 40px;
               color: #00d1ff;
               margin-right: 10px;
+              cursor: pointer;
               &-icon {
               }
             }
@@ -334,6 +335,7 @@
               min-width: 40px;
               max-width: 40px;
               color: #00d1ff;
+              cursor: pointer;
             }
             &-lic {
               background: #ffffff;
@@ -345,6 +347,22 @@
               max-width: 40px;
               color: #00d1ff;
               z-index: 2;
+            }
+            &-dec:hover {
+              background: linear-gradient(
+                99.76deg,
+                #00d1ff 3.76%,
+                #004c92 57.34%
+              );
+              color: #fff;
+            }
+            &-inc:hover {
+              background: linear-gradient(
+                99.76deg,
+                #00d1ff 3.76%,
+                #004c92 57.34%
+              );
+              color: #fff;
             }
           }
         }
@@ -398,6 +416,10 @@
             max-width: 60px;
             color: #ffffff;
           }
+          &-button:hover {
+            background: #fff;
+            color: #004c92;
+          }
         }
       }
       &-summary {
@@ -412,6 +434,53 @@
         align-items: center;
         flex-direction: column;
         text-align: center;
+        &-promotion {
+          text-align: center;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          text-align: center;
+          &-input {
+            background: #ffffff;
+            border-radius: 95px;
+            outline: none;
+            border: none;
+            width: 100%;
+            max-width: 170px;
+            min-width: 170px;
+            max-height: 30px;
+            min-height: 30px;
+            height: 100%;
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 300;
+            font-size: 15px;
+            text-align: center;
+            line-height: 24px;
+            margin-right: 10px;
+            color: #004c92;
+          }
+          &-button {
+            background: #ffffff;
+            border-radius: 95px;
+            outline: none;
+            border: none;
+            width: 100%;
+            max-width: 110px;
+            min-width: 110px;
+            max-height: 30px;
+            min-height: 30px;
+            height: 100%;
+            font-family: "Inter";
+            font-style: normal;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 24px;
+
+            color: #004c92;
+          }
+        }
         &-heading {
           font-size: 20px;
         }

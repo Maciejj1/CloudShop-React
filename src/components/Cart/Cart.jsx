@@ -12,7 +12,7 @@ import Navbar from "../NavBar/Navbar";
 import { useMediaQuery } from "react-responsive";
 import BurgerMenu from "../NavBar/BurgerMenu";
 import "./Cart.scss";
-export const Cart = ({ user }) => {
+const Cart = ({ user }) => {
   const { shoppingCart, dispatch, totalPrice, totalQty } =
     useContext(CartContext);
   const history = useNavigate();
@@ -31,8 +31,9 @@ export const Cart = ({ user }) => {
   });
   return (
     <div className="cart">
-      {Desktop && <Navbar user={user} />}
       {Phone && <BurgerMenu user={user} />}
+      {Desktop && <Navbar user={user} />}
+
       <div className="cart-base">
         {shoppingCart.length !== 0 && <h1>Koszyk</h1>}
         {shoppingCart.length === 0 && (
