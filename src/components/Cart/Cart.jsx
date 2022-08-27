@@ -70,7 +70,7 @@ export const Cart = ({ user }) => {
                   >
                     <Icon icon={ic_add} size={23} />
                   </div>
-                  <div className="cart-base-content-name-items-lic">2</div>
+
                   <div
                     className="cart-base-content-name-items-dec"
                     onClick={() =>
@@ -91,7 +91,7 @@ export const Cart = ({ user }) => {
               </div>
 
               <div className="cart-base-content-cart">
-                Cena Finalna: {cart.TotalProductPrice} PLN
+                {/* Cena Finalna: {cart.TotaslProductPrice} PLN */}
               </div>
               <button
                 className="cart-base-content-cart-button"
@@ -111,8 +111,14 @@ export const Cart = ({ user }) => {
           <div className="cart-base-summary">
             <div className="cart-base-summary-heading">Podsumowanie</div>
             <div className="cart-base-summary-promotion">
-              <input type="text" placeholder="Kod Rabatowy" />
-              <button>Zatwierdz</button>
+              <input
+                type="text"
+                placeholder="Kod Rabatowy"
+                className="cart-base-summary-promotion-input"
+              />
+              <button className="cart-base-summary-promotion-button">
+                Zatwierdz
+              </button>
             </div>
             <div className="cart-base-summary-price">
               <span className="cart-base-summary-price-text">Całość: </span>
