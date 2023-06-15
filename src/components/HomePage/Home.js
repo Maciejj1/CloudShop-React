@@ -10,41 +10,35 @@ import "./Home.scss";
 import { useNavigate } from "react-router-dom";
 import BurgerMenu from "../NavBar/BurgerMenu";
 import { useMediaQuery } from "react-responsive";
+
 const Home = ({ user, props }) => {
-  const [Input, setInput] = useState("");
-  let InputHandle = (e) => {
-    var LowerCase = e.target.value.toLowerCase();
-    setInput(LowerCase);
-  };
+  const [searchInput, setSearchInput] = useState("");
   const history = useNavigate();
-  // useEffect(() => {
-  //   auth.onAuthStateChanged((user) => {
-  //     if (!user) {
-  //       history("/login");
-  //     }
-  //   });
-  // });
+
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (!user) {
-        <div className="home"></div>;
-      } else {
+        history("/login");
       }
     });
-  });
+  }, [history]);
+
+  const handleSearch = (input) => {
+    setSearchInput(input);
+  };
+
   const Phone = useMediaQuery({
     query: "(max-width: 1023px)",
   });
+
   const Desktop = useMediaQuery({
     query: "(min-width: 1024px)",
   });
+
   return (
     <div className="home">
-      {Phone && <BurgerMenu user={user} />}
-      {Desktop && <Navbar user={user} />}
-      {Desktop && <SliderBar />}
-
-      <Products input={Input} />
+      {Desktop && <SliderBar onSearch={handleSearch} />}
+      <Products input={searchInput} />
     </div>
   );
 };

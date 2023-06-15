@@ -21,13 +21,13 @@ const Navbar = ({ user }) => {
   const Desktop = useMediaQuery({
     query: "(min-width: 1024px)",
   });
+  
   const history = useNavigate();
   const handleLogout = () => {
     auth.signOut().then(() => {
       history("/");
     });
   };
-  const location = useLocation();
   return (
     <div className="navbar-container">
       <div className="navbar-container-desktop">
@@ -40,32 +40,33 @@ const Navbar = ({ user }) => {
           <h2 className="navbar-container-desktop-content-title">CLOUDSHOP</h2>
         </div>
         <ul className="navbar-container-desktop-table">
-          {user && (
-            <li id="user" className="navbar-container-desktop-table-list">
-              <button
-                className="navbar-container-desktop-table-list-logout"
-                onClick={handleLogout}
-              >
-                Wyloguj
-              </button>
-            </li>
-          )}
-          {!user && (
-            <li id="nuser" className="navbar-container-desktop-table-list">
-              <Link
-                to="login"
-                className="navbar-container-desktop-table-list-button2"
-              >
-                Logowanie
-              </Link>
-              <Link
-                to="register"
-                className="navbar-container-desktop-table-list-button2"
-              >
-                Rejestracja
-              </Link>
-            </li>
-          )}
+        {user && (
+  <li id="user" className="navbar-container-desktop-table-list">
+    <button
+      className="navbar-container-desktop-table-list-logout"
+      onClick={handleLogout}
+    >
+      Wyloguj
+    </button>
+  </li>
+)}
+
+{!user && (
+  <li id="nuser" className="navbar-container-desktop-table-list">
+    <Link
+      to="login"
+      className="navbar-container-desktop-table-list-button2"
+    >
+      Logowanie
+    </Link>
+    <Link
+      to="register"
+      className="navbar-container-desktop-table-list-button2"
+    >
+      Rejestracja
+    </Link>
+  </li>
+)}
 
           <li className="navbar-container-desktop-table-list">
             <Link
@@ -112,27 +113,27 @@ const Navbar = ({ user }) => {
 };
 
 export default Navbar;
-{
-  /* {!user && (
-          <div className="appBar">
-            <Link to="login/register" className="navlinkss">
-              Zarejestruj się
-            </Link>
-            <Link to="login" className="navlinks">
-              Zaloguj się
-            </Link>
-          </div>
-        )}
-        {user && (
-          <div className="appBar">
-            <span>
-              <Navigation />
-            </span>
-            <span>
-              <button className="logout-btn" onClick={handleLogout}>
-                Wyloguj
-              </button>
-            </span>
-          </div>
-        )} */
-}
+// {
+//   /* {!user && (
+//           <div className="appBar">
+//             <Link to="login/register" className="navlinkss">
+//               Zarejestruj się
+//             </Link>
+//             <Link to="login" className="navlinks">
+//               Zaloguj się
+//             </Link>
+//           </div>
+//         )}
+//         {user && (
+//           <div className="appBar">
+//             <span>
+//               <Navigation />
+//             </span>
+//             <span>
+//               <button className="logout-btn" onClick={handleLogout}>
+//                 Wyloguj
+//               </button>
+//             </span>
+//           </div>
+//         )} */
+// }

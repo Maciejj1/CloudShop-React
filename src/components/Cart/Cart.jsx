@@ -11,7 +11,7 @@ import { Icon } from "react-icons-kit";
 import Navbar from "../NavBar/Navbar";
 import { useMediaQuery } from "react-responsive";
 import BurgerMenu from "../NavBar/BurgerMenu";
-import "./Cart.scss";
+import "../../App.scss";
 const Cart = ({ user }) => {
   const { shoppingCart, dispatch, totalPrice, totalQty } =
     useContext(CartContext);
@@ -31,8 +31,6 @@ const Cart = ({ user }) => {
   });
   return (
     <div className="cart">
-      {Phone && <BurgerMenu user={user} />}
-      {Desktop && <Navbar user={user} />}
 
       <div className="cart-base">
         {shoppingCart.length !== 0 && <h1>Koszyk</h1>}

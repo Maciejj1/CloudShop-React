@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./Register.scss";
+import "../../App.scss";
 import { auth, db } from "../../config/Config";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
@@ -35,23 +35,23 @@ const Register = (props) => {
     console.log("its works");
   };
   return (
-    <div className="register">
-      <div className="register-container">
-        <div className="register-container-logo">
-          <img src={Logo} alt="Logo" className="register-container-logo-logo" />
-          <h1 className="register-container-logo-text">CLOUDSHOP</h1>
+    <div className="auth">
+      <div className="auth-container">
+        <div className="auth-container-logo">
+          <img src={Logo} alt="Logo" className="auth-container-logo-logo" />
+          <h1 className="auth-container-logo-text">CLOUDSHOP</h1>
         </div>
 
-        <div className="register-container-items">
-          <div className="register-container-items-inputs">
+        <div className="auth-container-items">
+          <div className="auth-container-items-inputs">
             <form
               autoComplete="off"
               onSubmit={RegisterForm}
-              className="register-container-items-inputs-form"
+              className="auth-container-items-inputs-form"
             >
               <label htmlFor="name" />
               <input
-                className="register-container-items-inputs-form-input"
+                className="auth-container-items-inputs-form-input"
                 type="text"
                 placeholder="Nazwa"
                 value={name}
@@ -59,7 +59,7 @@ const Register = (props) => {
               />
               <label htmlFor="email" />
               <input
-                className="register-container-items-inputs-form-input"
+                className="auth-container-items-inputs-form-input"
                 type="email"
                 placeholder="Email"
                 value={email}
@@ -67,24 +67,24 @@ const Register = (props) => {
               />
               <label htmlFor="password" />
               <input
-                className="register-container-items-inputs-form-input"
+                className="auth-container-items-inputs-form-input"
                 type="password"
                 placeholder="Hasło"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
               <button
-                className="register-container-items-inputs-form-button"
+                className="auth-container-items-inputs-form-button"
                 type="submit"
               >
                 <h2>Rejestruj</h2>
               </button>
-              <h3 className="register-container-items-inputs-form-account">
+              <h3 className="auth-container-items-inputs-form-account">
                 Masz konto?
               </h3>
               <Link
                 to="/login"
-                className="register-container-items-inputs-form-button"
+                className="auth-container-items-inputs-form-button"
               >
                 <h2>Zaloguj się</h2>
               </Link>
